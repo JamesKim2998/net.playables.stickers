@@ -53,6 +53,7 @@ public class PostBuild_AddStickers : IPostprocessBuildWithReport
 		pbxProject.AddBuildProperty(stickersGuid, "TARGETED_DEVICE_FAMILY", "1,2");
 		pbxProject.AddBuildProperty(stickersGuid, "ASSETCATALOG_COMPILER_APPICON_NAME", "iMessage App Icon");
 		pbxProject.AddBuildProperty(stickersGuid, "ALWAYS_SEARCH_USER_PATHS", "NO");
+		pbxProject.AddBuildProperty(stickersGuid, "CURRENT_PROJECT_VERSION", "1");
 		pbxProject.AddBuildProperty(stickersGuid, "GENERATE_INFOPLIST_FILE", "YES");
 
 		pbxProject.WriteToFile(pbxPath);
