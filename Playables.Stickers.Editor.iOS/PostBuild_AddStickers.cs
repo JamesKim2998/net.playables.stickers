@@ -41,11 +41,6 @@ public class PostBuild_AddStickers : IPostprocessBuildWithReport
 		PBXProject pbxProject = new PBXProject();
 		pbxProject.ReadFromFile(pbxPath);
 
-		var dest = $"{pathToBuiltProject}/Stickers";
-		if (Directory.Exists(dest))
-			FileUtil.DeleteFileOrDirectory(dest);
-		FileUtil.CopyFileOrDirectory(stickersPath, dest);
-
 		string appGuid = pbxProject.GetUnityMainTargetGuid();
 
 		string stickersGuid = pbxProject.AddStickerExtension(appGuid, "Stickers",  PlayerSettings.applicationIdentifier+".Stickers", "Stickers/Info.plist");
