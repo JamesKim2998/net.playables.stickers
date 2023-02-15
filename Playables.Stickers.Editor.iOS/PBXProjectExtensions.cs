@@ -9,18 +9,6 @@ namespace UnityEditor.iOS.Xcode.Extensions.Custom
 		internal static PBXProjectExtensions.FlagList appExtensionReleaseBuildFlags = new PBXProjectExtensions.FlagList()
 		{
 			{
-				"LD_RUNPATH_SEARCH_PATHS",
-				"$(inherited)"
-			},
-			{
-				"LD_RUNPATH_SEARCH_PATHS",
-				"@executable_path/Frameworks"
-			},
-			{
-				"LD_RUNPATH_SEARCH_PATHS",
-				"@executable_path/../../Frameworks"
-			},
-			{
 				"PRODUCT_NAME",
 				"$(TARGET_NAME)"
 			},
@@ -31,18 +19,6 @@ namespace UnityEditor.iOS.Xcode.Extensions.Custom
 		};
 		internal static PBXProjectExtensions.FlagList appExtensionDebugBuildFlags = new PBXProjectExtensions.FlagList()
 		{
-			{
-				"LD_RUNPATH_SEARCH_PATHS",
-				"$(inherited)"
-			},
-			{
-				"LD_RUNPATH_SEARCH_PATHS",
-				"@executable_path/Frameworks"
-			},
-			{
-				"LD_RUNPATH_SEARCH_PATHS",
-				"@executable_path/../../Frameworks"
-			},
 			{
 				"PRODUCT_NAME",
 				"$(TARGET_NAME)"
@@ -96,9 +72,7 @@ namespace UnityEditor.iOS.Xcode.Extensions.Custom
 				proj.SetBuildPropertyForConfig(configGuid, "INFOPLIST_FILE", infoPlistPath);
 				proj.SetBuildPropertyForConfig(configGuid, "PRODUCT_BUNDLE_IDENTIFIER", bundleId);
 			}
-			proj.AddSourcesBuildPhase(str);
 			proj.AddResourcesBuildPhase(str);
-			proj.AddFrameworksBuildPhase(str);
 			string sectionGuid = proj.AddCopyFilesBuildPhase(mainTargetGuid, "Embed App Extensions", "", "13");
 			proj.AddFileToBuildSection(mainTargetGuid, sectionGuid, proj.GetTargetProductFileRef(str));
 			proj.AddTargetDependency(mainTargetGuid, str);
