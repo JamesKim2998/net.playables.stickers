@@ -30,12 +30,6 @@ public class PostBuild_AddStickers : IPostprocessBuildWithReport
 	
 	public static void AddStickerExtension(string stickersPath, string pathToBuiltProject)
 	{
-		if(!Directory.Exists(stickersPath))
-		{
-			Debug.LogWarning($"Can't export stickers, path {stickersPath} not found");
-			return;
-		}
-			
 		string pbxPath = PBXProject.GetPBXProjectPath(pathToBuiltProject);
 
 		PBXProject pbxProject = new PBXProject();
