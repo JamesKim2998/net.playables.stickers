@@ -23,7 +23,7 @@ public class PostBuild_AddStickers : IPostprocessBuildWithReport
 	{
 		if (report.summary.platform == BuildTarget.iOS)
 		{
-			if(StickerSettings.GetOrCreateSettings().exportEnabled)
+			// if(StickerSettings.GetOrCreateSettings().exportEnabled)
 				AddStickerExtension(stickersPath,report.summary.outputPath);
 		}
 	}
