@@ -1,3 +1,4 @@
+#if UNITY_IOS
 using System;
 using System.Collections.Generic;
 using UnityEditor.iOS.Xcode.PBX;
@@ -52,7 +53,7 @@ namespace UnityEditor.iOS.Xcode.Extensions.Custom
 			proj.SetBuildFlagsFromDict(configGuid, (IEnumerable<KeyValuePair<string, string>>) PBXProjectExtensions.appExtensionDebugBuildFlags);
 		}
 
-		
+
 		public static string AddStickerExtension(
 			this PBXProject proj,
 			string mainTargetGuid,
@@ -88,3 +89,5 @@ namespace UnityEditor.iOS.Xcode.Extensions.Custom
 		}
 	}
 }
+
+#endif

@@ -1,3 +1,4 @@
+#if UNITY_IOS
 using System.IO;
 using UnityEditor;
 using UnityEditor.Build;
@@ -59,3 +60,4 @@ public class PostBuild_AddStickers : IPostprocessBuildWithReport
 		pbxProject.WriteToFile(pbxPath);
 	}
 }
+#endif
